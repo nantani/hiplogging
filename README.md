@@ -66,8 +66,9 @@ logger.fatal('fatal - what shields?')
  You can set your own colors and the sender name using extra with logging.log.
 ```python
 # Valid colors are ["purple", "gray", "green", "yellow", "red"]
+# Valid formats are [text","html"]
 # The first argument is the log level:
 #    https://docs.python.org/2/library/logging.html#logging-levels
 #    https://docs.python.org/2/library/logging.html#logging.log
-logger.log(20, "Another message", extra={'color':'purple', "sender":"FOOBAR"})
+logger.log(20, "Another message", extra={'color':'purple', "sender":"FOOBAR", "format":"html"})
 ```

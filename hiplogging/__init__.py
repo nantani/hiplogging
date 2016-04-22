@@ -21,10 +21,15 @@ class HipChatHandler(logging.Handler):
             notify = bool(record.notify)
         else:
             notify = self.__notify_for_level(record.levelno)
+        if hasattr(record, "format"):
+            format = record.format
+        else:
+            format = None
         self.room.notification(
             message=self.format(record),
             color=color,
-            notify=notify
+            notify=notify,
+            format=format
         )
 
     def __color_for_level(self, levelno):
